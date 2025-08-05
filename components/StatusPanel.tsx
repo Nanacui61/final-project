@@ -1,6 +1,6 @@
 'use client';
 
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { useContext } from "react";
 import { EntityContext } from "@/context/EntityContext";
 import { MAX_MOVES } from "@/lib/constants";

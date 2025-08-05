@@ -2,7 +2,7 @@
 
 import styled from 'styled-components';
 
-import Link from 'next/link';
+
 
 
 const FullScreenWrapper = styled.div`
@@ -61,13 +61,13 @@ export default function IntroScreen() {
             <Wrapper>
                 <Title>HELP...</Title>
                 <Paragraph>
-                    You've stumbled upon an ancient website...
+                    You have stumbled upon an ancient website...
                     Strange symbols flicker across the screen.
                     A presence is trapped here — something forgotten, buried beneath digital dust.
                     It reaches out to you through static and whispers...
                 </Paragraph>
                 <Paragraph>
-                    Can you find the hidden entity and set it free before it's trapped forever?
+                    Can you find the hidden entity and set it free before it is trapped forever?
                 </Paragraph>
                 <StyledAnchor href="/New_game">Save Me!!!!!</StyledAnchor>
 
