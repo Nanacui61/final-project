@@ -1,3 +1,5 @@
+// <! WRITTEN BY STEVEN !> 
+
 'use client';
 
 import styled from "styled-components";
@@ -17,6 +19,7 @@ const TerminalBox = styled.div`
   border-radius: 6px;
 `;
 
+// slightly different styling for the display message when the player clicks on a tile that's close to the treasure
 const Line = styled.div<{ isWarm?: boolean }>`
   margin-bottom: 0.3rem;
     font-size: 1.2rem;
@@ -26,12 +29,14 @@ const Line = styled.div<{ isWarm?: boolean }>`
 export default function Terminal() {
     const { messages } = useContext(EntityContext);
 
+    // (could be improved) scans for keywords that are used in warm messages
     const isWarmMessage = (msg: string) =>
         /warm|cl0se|tr3mbles|H34t|br3ath|nearby/i.test(msg);
 
     return (
         <TerminalBox>
             {[...messages].reverse().map((msg, index) => (
+                // displays text, if it's warm, render it another way
                 <Line key={index} isWarm={isWarmMessage(msg)}>
                     &gt; {msg}
                 </Line>
