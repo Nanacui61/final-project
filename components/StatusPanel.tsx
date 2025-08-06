@@ -43,7 +43,7 @@ export default function StatusPanel() {
         <Panel>
             <Info>Moves made: {moveCount}/{MAX_MOVES}</Info>
             {isWin && (
-                <BigStatus className="glitch-text" data-text="I’m FREE! You found me... Thank you, stranger.">
+                <BigStatus type={"win"}>
                     I’m FREE!<br />
                     You found me...<br />
                     Thank you, stranger.
