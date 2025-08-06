@@ -1,2 +1,2 @@
-export const MAX_MOVES = 20;
+export const MAX_MOVES = 15;
 

@@ -1,3 +1,4 @@
+// Written by Yuqian Cui
 // read from mongodb
 import getCollection, {RECORDS_COLLECTION} from "@/mongodb";
 import { GameRecordProps} from "@/type/type";

@@ -1,7 +1,8 @@
+// Written by Yuqian Cui
+// display the Nav bar that can redirect to Home, Game History and New Gamw page
 'use client';
 
 import Link from 'next/link';
-
 import styled from 'styled-components';
 
 const NavBar = styled.nav`
@@ -28,12 +29,7 @@ const NavLink = styled(Link)`
     }
 `;
 
-
-
 export default function Nav() {
-
-
-
 
     return (
         <NavBar>

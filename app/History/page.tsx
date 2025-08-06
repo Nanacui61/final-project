@@ -1,3 +1,5 @@
+// written by Yuqian Cui
+// show the game history
 import getAllGameRecords from "@/lib/getAllRecords";
 
 export default async function GameHistoryPage() {

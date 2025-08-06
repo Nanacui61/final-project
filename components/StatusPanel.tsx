@@ -42,7 +42,15 @@ export default function StatusPanel() {
     return (
         <Panel>
             <Info>Moves made: {moveCount}/{MAX_MOVES}</Info>
-            {isWin && <BigStatus type="win">You Found MEEEE!</BigStatus>}
+            {isWin && (
+                <BigStatus className="glitch-text" data-text="I’m FREE! You found me... Thank you, stranger.">
+                    I’m FREE!<br />
+                    You found me...<br />
+                    Thank you, stranger.
+                </BigStatus>
+
+            )}
+
             {isLose && <BigStatus type="lose">Too LATE...!</BigStatus>}
             {!isWin && !isLose && <Info>Status: {gameStatus}</Info>}
         </Panel>

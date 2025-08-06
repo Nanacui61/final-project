@@ -1,4 +1,6 @@
-// app/layout.tsx
+//Written by Yuqian Cui
+//layout of the game
+
 import type { Metadata } from "next";
 // import StyledComponentsRegistry from "@/lib/registry";
 import { EntityProvider } from "@/context/EntityContext";
@@ -7,8 +9,8 @@ import "./globals.css";
 
 
 export const metadata: Metadata = {
-    title: "Treasure Hunt",
-    description: "An eerie treasure hunting experience",
+    title: "Entity Hunt",
+    description: "An entity saving game",
 };
 
 export default function RootLayout({
