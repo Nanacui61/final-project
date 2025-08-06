@@ -40,7 +40,17 @@ export default function Nav() {
             <div>
                 <NavLink href="/">Home</NavLink>
                 <NavLink href="/History">Game History</NavLink>
-                <NavLink href="/New_game">New Game</NavLink>
+                <NavLink
+                    href="/New_game"
+                    onClick={(e) => {
+                        if (window.location.pathname === "/New_game") {
+                            e.preventDefault();
+                            window.location.reload();
+                        }
+                    }}
+                >
+                    New Game
+                </NavLink>
 
             </div>
         </NavBar>

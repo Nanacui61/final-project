@@ -4,7 +4,7 @@ export default async function GameHistoryPage() {
     const records = await getAllGameRecords();
 
     return (
-        <div className="min-h-screen bg-zinc-900 text-white px-6 py-8 font-mono">
+        <div className="min-h-screen bg-zinc-900 text-white px-6 py-8 font-mono" style={{ fontFamily: '"Courier New", monospace' }}>
             <h1 className="text-2xl font-bold text-center">Game History</h1>
 
             <div className="overflow-x-auto mt-6">
