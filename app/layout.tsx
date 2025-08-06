@@ -1,9 +1,10 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-// import StyledComponentsRegistry from "@/lib/registry";
+import StyledComponentsRegistry from "@/lib/registry";
 import { EntityProvider } from "@/context/EntityContext";
 import Nav from "@/components/Nav";
 import "./globals.css";
+
 
 export const metadata: Metadata = {
     title: "Treasure Hunt",
@@ -18,12 +19,12 @@ export default function RootLayout({
     return (
         <html lang="en">
         <body>
-        {/*<StyledComponentsRegistry>*/}
+        <StyledComponentsRegistry>
         <EntityProvider>
             <Nav />
             {children}
         </EntityProvider>
-        {/*</StyledComponentsRegistry>*/}
+        </StyledComponentsRegistry>
         </body>
         </html>
     );
