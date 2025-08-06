@@ -9,8 +9,8 @@ import { EntityContext } from "@/context/EntityContext";
 const TerminalBox = styled.div`
   background-color: #000000;
   color: #00ff00;
-  padding: 1rem;
-  margin: 1rem auto;
+  padding: 2%;
+  margin: 1% auto;
   width: 500px;
   border: 1px solid #00ff00;
   font-family: 'Courier New', Courier, monospace;
