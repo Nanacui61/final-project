@@ -9,7 +9,7 @@ const TerminalBox = styled.div`
   color: #00ff00;
   padding: 1rem;
   margin: 1rem auto;
-  max-width: 600px;
+  width: 500px;
   border: 1px solid #00ff00;
   font-family: 'Courier New', Courier, monospace;
   height: 200px;
