@@ -21,8 +21,8 @@ const TerminalBox = styled.div`
 
 // slightly different styling for the display message when the player clicks on a tile that's close to the treasure
 const Line = styled.div<{ isWarm?: boolean }>`
-  margin-bottom: 0.3rem;
-    font-size: 1.2rem;
+  margin-bottom: 0.5%;
+  font-size: calc(2px + 1.4vh);
   color: ${({ isWarm }) => (isWarm ? 'orange' : '#00ff00')};
 `;
 
