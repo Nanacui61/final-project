@@ -9,10 +9,11 @@ export default function IntroScreen() {
                 <h1 className="text-6xl font-bold text-[#ff4444] mb-4">HELP...</h1>
 
                 <p className="text-2xl leading-relaxed mb-6">
-                    You have stumbled upon an ancient website... <br />
-                    A presence is trapped here — something forgotten, buried beneath digital dust. <br />
-                    It reaches out to you through static and whispers...
+                    You have stumbled upon an abandoned website... <br />
+                    An entity is trapped here. <br />
+                    It senses your presence and reaches out to you...
                 </p>
+
 
                 <p className="text-xl leading-relaxed mb-8">
                     Can you find the hidden entity and set it free before it is trapped forever?
