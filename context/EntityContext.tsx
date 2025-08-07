@@ -1,3 +1,4 @@
+// <! WRITTEN BY STEVEN !> 
 "use client";
 
 import { createContext, useState, ReactNode } from "react";
@@ -5,45 +6,42 @@ import { MAX_MOVES } from "@/lib/constants";
 
 
 type EntityContextType = {
-    messages: string[];
-    moveCount: number;
-    gameStatus: string;
-    triggerEvent: (type: string) => void;
+    messages: string[]; // an array of message strings
+    moveCount: number; // number of moves made
+    gameStatus: string; //a string like "warm", "You Win!", etc
+    triggerEvent: (type: string) => void; // function to be called when something happens
 };
 
+// custom messages for each stage so the players will get varying lines, so it's not that boring
 const wrongMessages = [
-    "N0thing h3re... k33p s33king...",
+    "N0thing h3re... k33p looking...",
     "Dust... and s1lenc3.",
     "N0thing but ech0es.",
-    "Just... d3bris. Tr4p still h0lds.",
+    "Just... d3bris.",
     "Wron9. Ag4in."
 ];
 
 const warmMessages = [
     "W4rmth... cl0se... so cl0se...",
-    "I fe3l... your pr3senc3 nearby...",
-    "Y0u're n3ar... th3 c4ge tr3mbles...",
-    "H34t... thrumming... y3s...",
-    "A bre4th... I c4n alm0st t4ste fr33dom..."
+    "I fe3l... your presencE nearby...",
+    "Y0u're n3ar...", ,
+    "A breAth... I cAn alm0st t4ste freEdom..."
 ];
 
 const winMessages = [
-    "You f0und m3... I’m fr33...",
-    "L1ght... fin4lly... th4nk you...",
-    "Esc4pe... re4ched... bec4use of y0u...",
-    "You s4w thr0ugh th3 l13s... th4nk y0u.",
-    "Fr33... fr33... fr33..."
+    "You f0und m3... I’m frEE...",
+    "...th4nk you...",
+    "You s4w thr0ugh th3 l1Es... th4nk y0u.",
 ];
 
 const loseMessages = [
-    "T00 l4te... I’m tr4pped... 4lw4ys...",
+    "T00 lAte... I’m trApped...",
     "You w3re cl0se... but not en0ugh...",
-    "Th3 sh4ckl3s h0ld... y0u're g0ne...",
-    "Endl3ss d4rk... n0 rele4se...",
-    "I'm f0rg0tt3n... 4g4in..."
+    "I'm f0rgottEn... 4gAin..."
 ];
 
 
+// returns a random string from one of the arrays based on the type
 function getMessage(type: string): string {
     const random = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
     switch (type) {
@@ -60,6 +58,7 @@ function getMessage(type: string): string {
     }
 }
 
+// creates the context with default values (empty list, 0 moves, etc.)
 export const EntityContext = createContext<EntityContextType>({
     messages: [],
     moveCount: 0,
@@ -67,7 +66,7 @@ export const EntityContext = createContext<EntityContextType>({
     triggerEvent: () => {},
 });
 
-
+// wrapper for app and manages game state
 export function EntityProvider({ children }: { children: ReactNode }) {
     const [messages, setMessages] = useState<string[]>([
         "PleAsE saVe ME...",
@@ -75,25 +74,30 @@ export function EntityProvider({ children }: { children: ReactNode }) {
     const [moveCount, setMoveCount] = useState(0);
     const [gameStatus, setGameStatus] = useState("Idle");
 
-
+    // main logic that handles game events, triggered whenever a tile is clicked
     function triggerEvent(type: string) {
         let newStatus = "";
         const newMessage = getMessage(type);
 
         const newCount = moveCount + 1;
+
+        // end game conditions
         if (type === "treasure") {
             newStatus = "You Win!";
         } else if (newCount >= MAX_MOVES) {
             newStatus = "You Lose!";
-            type = "maxMoves"; // optional: to make sure you get the right message
+            type = "maxMoves";
         }
 
+        //updates moveCount
         setMoveCount(newCount);
 
+        // creates a new copy of the old array and appends whatever the new message to it 
         if (newMessage) {
             setMessages((prev) => [...prev, newMessage]);
         }
 
+        //either win or lose 
         if (newStatus) {
             setGameStatus(newStatus);
         }
