@@ -1,6 +1,7 @@
 // written by Yuqian Cui
 // show the game history
 import getAllGameRecords from "@/lib/getAllRecords";
+export const dynamic = 'force-dynamic';
 
 export default async function GameHistoryPage() {
     const records = await getAllGameRecords();
