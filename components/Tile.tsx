@@ -1,14 +1,16 @@
+// <! WRITTEN BY STEVEN !> 
 'use client';
 import React from 'react';
 import styled , {keyframes,css}from 'styled-components';
 
 type TileProps = {
-    revealed: boolean;
-    isTreasure: boolean;
-    onClick: () => void;
-    disabled?: boolean;
+    revealed: boolean; // whether this tile has been clicked
+    isTreasure: boolean; // is this the tile that holds the treasure
+    onClick: () => void; // function to call when clicked
+    disabled?: boolean; // flag to prevent further interactions of tile after it has been clicked/game ended already
 };
 
+// a custom glow animation that applies to the treasure tile after it has been clicked
 const pulseGlow = keyframes`
   0% { box-shadow: 0 0 4px red; }
   50% { box-shadow: 0 0 12px #ff0044; }
@@ -27,10 +29,10 @@ const TileWrapper = styled.div<{
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
     cursor: pointer;
     user-select: none;
 
+     /* Triggered when the tile is revealed and contains the treasure */
     ${({ revealed, isTreasure }) =>
             revealed &&
             isTreasure &&
@@ -48,8 +50,8 @@ export const Tile: React.FC<TileProps> = ({
                                           }) => {
     const content = revealed
         ? isTreasure
-            ? "👁" // 👁 could be “the entity”
-            : "⬜"
+            ? "👁" // treasure tile (after clicking)
+            : "⬜" // norrmal tile (after clicking)
         : "";
     return (
         <TileWrapper
