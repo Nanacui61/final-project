@@ -31,7 +31,7 @@ export default function Terminal() {
 
     // (could be improved) scans for keywords that are used in warm messages
     const isWarmMessage = (msg: string) =>
-        /warm|cl0se|tr3mbles|H34t|br3ath|nearby/i.test(msg);
+        /warm|cl0se|tr3mbles|n3ar|H34t|breAth|nearby/i.test(msg);
 
     return (
         <TerminalBox>
