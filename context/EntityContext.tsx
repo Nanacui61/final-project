@@ -24,7 +24,7 @@ const wrongMessages = [
 const warmMessages = [
     "W4rmth... cl0se... so cl0se...",
     "I fe3l... your presencE nearby...",
-    "Y0u're n3ar...", ,
+    "Y0u're n3ar...",
     "A breAth... I cAn alm0st t4ste freEdom..."
 ];
 
