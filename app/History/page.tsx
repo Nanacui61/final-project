@@ -24,7 +24,8 @@ export default async function GameHistoryPage() {
                         <tr key={r.id} className="border-b border-zinc-800 hover:bg-zinc-800 transition">
                             <td className="py-2 px-4">{r.result}</td>
                             <td className="py-2 px-4">{r.moves}</td>
-                            <td className="py-2 px-4">{new Date(r.timestamp).toLocaleString()}</td>
+                            <td className="py-2 px-4">{new Date(r.timestamp).toLocaleString("en-US", { timeZone: "America/New_York" })
+}</td>
                         </tr>
                     ))}
                     </tbody>
