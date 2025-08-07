@@ -1,5 +1,5 @@
 // Written by Yuqian Cui
-// display the Nav bar that can redirect to Home, Game History and New Gamw page
+// display the Nav bar that can redirect to Home, Game History and New Game page
 'use client';
 
 import Link from 'next/link';
