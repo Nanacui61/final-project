@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 const NavBar = styled.nav`
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 16px 32px; 
     background-color: #1a1a1a;
     color: white;
     display: flex;
@@ -20,15 +20,14 @@ const NavBar = styled.nav`
 const NavLink = styled(Link)`
     color: #00ffcc;
     text-decoration: none;
-    margin-right: 1.5rem;
+    margin-right: 24px; 
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: calc(2px + 1.2vw); 
 
     &:hover {
         text-decoration: underline;
     }
 `;
-
 export default function Nav() {
 
     return (
